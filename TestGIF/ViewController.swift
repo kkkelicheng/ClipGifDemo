@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     func readGifImage(){
         guard
-        let bunder = Bundle.main.path(forResource: "test1", ofType: "gif"),
+        let bunder = Bundle.main.path(forResource: "test2", ofType: "gif"),
         let gifData = try? Data.init(contentsOf: URL.init(fileURLWithPath: bunder))
         else {
             print("get gif data error")
@@ -67,8 +67,8 @@ class ViewController: UIViewController {
     }
     
     func clipImage(_ image:UIImage,path:String) -> UIImage? {
-        let size = image.size
-        let offset : CGFloat = 5
+        let size = CGSize.init(width: 120, height: 120)
+        let offset : CGFloat = 0
         let originRect = CGRect.init(origin: .zero, size: size)
         let insetRect = originRect.inset(by: UIEdgeInsets.init(top: offset, left: offset, bottom: offset, right: offset))
         UIGraphicsBeginImageContext(size)
